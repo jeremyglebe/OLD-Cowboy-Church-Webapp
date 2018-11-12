@@ -1,0 +1,13 @@
+<ion-menu [content]="content">
+
+  <ion-buttons right>
+
+      <button ion-button menuToggle icon-only small clear>
+          <ion-icon name='close-circle'></ion-icon>
+      </button>
+
+  </ion-buttons>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
