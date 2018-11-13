@@ -1,0 +1,39 @@
+page-contact {
+
+    .directory_header {
+        width: 100%;
+        text-align: center;
+    }
+
+    @media (min-width: 600px){
+
+        .directory_name {
+            width: 100%;
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        .directory_format {
+            width: 100%;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+    }
+
+    @media (max-width: 599px){
+
+        .directory_name {
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .directory_format {
+            width: 100%;
+            text-align: center;
+        }
+    
+    }
+
+}

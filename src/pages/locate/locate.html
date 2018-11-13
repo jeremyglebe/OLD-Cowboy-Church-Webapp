@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar text-center color="back">
+
+    <ion-title>Haws Road Community Church</ion-title>
+
+    <ion-buttons top left>
+
+      <button ion-button menuToggle icon-only>
+        <ion-icon name='menu'></ion-icon>
+      </button>
+
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div class="text_format">
+
+    &nbsp;&nbsp;Trying to find the church? Take a look at this map.
+    <br><br>&nbsp;&nbsp;Need directions? Choose somewhere to start down below.
+    <br><br>&nbsp;&nbsp;(If you want directions from your house or anywhere else not listed, just click the
+    "Directions" button inside the map. It'll take you to Google Maps and you can get directions from any point you
+    choose.)
+
+  </div>
+
+  <div class="map_format">
+    <iframe id="myMap" [src]="currMap | safe" width=100% height=100% frameborder="5" style="border:5" allowfullscreen></iframe>
+  </div>
+
+  <ion-buttons text-center align-items-center>
+
+    <button ion-button (click)="dirCityHall()">Directions starting from<br>City Hall</button>
+    <button ion-button (click)="dirHighSchool()">Directions starting from<br>IP High School</button>
+    <button ion-button (click)="dirBradford()">Directions starting from<br>Bradford Elementary</button>
+    <button ion-button (click)="dirCancel()">I don't need directions<br>(Original Map)</button>
+
+  </ion-buttons>
+
+</ion-content>

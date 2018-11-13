@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar text-center color="back">
+
+    <ion-title>Haws Road Community Church</ion-title>
+
+    <ion-buttons top left>
+
+      <button ion-button menuToggle icon-only>
+        <ion-icon name='menu'></ion-icon>
+      </button>
+
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <div class="directory_header">
+
+      <ion-list-header style="font-size: 2rem">Member Directory</ion-list-header>
+
+    </div>
+
+    <ion-item *ngFor="let item of directory">
+
+      <div class="directory_format">
+
+        <img src="{{image_urls[item.Picture]}}" width="35%">
+
+      </div>
+
+      <div class="directory_name">{{item.Name}}</div>
+
+      <div class="directory_format">
+
+        Phone #: {{item.Phone}}
+
+      </div>
+
+      <div class="directory_format">
+
+          Address: {{item["Street Address"]}}, {{item.City}} {{item.State}} {{item.Zip}}
+  
+        </div>
+  
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
