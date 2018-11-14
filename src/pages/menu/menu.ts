@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { TabsPage } from '../tabs/tabs'
+import { TabsPage } from '../tabs/tabs';
+import { LoginPage } from '../login/login';
+import { RegisterPage } from '../register/register';
+import { ManagePage } from '../manage/manage';
 
 /**
  * Generated class for the MenuPage page.
@@ -16,6 +19,7 @@ import { TabsPage } from '../tabs/tabs'
 })
 export class MenuPage {
 
+  admin = true;
   rootPage = TabsPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -23,6 +27,18 @@ export class MenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
+  }
+
+  Clicked_Login() {
+    this.navCtrl.push(LoginPage);
+  }
+
+  Clicked_Register() {
+    this.navCtrl.push(RegisterPage);
+  }
+
+  Clicked_Manage() {
+    this.navCtrl.push(ManagePage);
   }
 
 }

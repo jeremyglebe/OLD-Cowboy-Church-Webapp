@@ -22,6 +22,7 @@ import { SafePipe } from '../pipes/safe/safe';
 import { AngularFireModule } from 'angularfire2'
 import { AngularFirestoreModule } from 'angularfire2/firestore'
 import { AngularFireStorageModule } from 'angularfire2/storage'
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import * as env_firebase from '../environment/firebase';
 
 @NgModule({
@@ -43,7 +44,8 @@ import * as env_firebase from '../environment/firebase';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(env_firebase.fireConfig),
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
