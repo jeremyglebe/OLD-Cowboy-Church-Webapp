@@ -1,5 +1,6 @@
+import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
 
 /**
  * Generated class for the RegisterPage page.
@@ -15,11 +16,35 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  email: string = "";
+  password: string = "";
+  verifypw: string = "";
+
+  constructor(public auth: AuthProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterPage');
+    console.log('ionViewDidLoad LoginPage');
+  }
+
+  async doRegister() {
+
+    if(this.pwsMatch()){
+
+      try{
+        await this.auth.register(this.email, this.password);
+      }catch(e){
+        console.log(e);
+      }
+
+    }else{
+      console.log("PASSWORDS DO NOT MATCH!");
+    }
+
+  }
+
+  pwsMatch(){
+    return this.password == this.verifypw;
   }
 
 }

@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+//Import pages
 import { TabsPage } from '../tabs/tabs';
 import { LoginPage } from '../login/login';
 import { RegisterPage } from '../register/register';
 import { ManagePage } from '../manage/manage';
+
+//Import global variables
+import { GlobalProvider } from '../../providers/global/global';
 
 /**
  * Generated class for the MenuPage page.
@@ -19,10 +24,15 @@ import { ManagePage } from '../manage/manage';
 })
 export class MenuPage {
 
-  admin = true;
   rootPage = TabsPage;
+  g: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public global: GlobalProvider)
+  {
+    this.g = global;
   }
 
   ionViewDidLoad() {

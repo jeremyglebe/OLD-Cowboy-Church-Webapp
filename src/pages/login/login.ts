@@ -1,14 +1,6 @@
+import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { MenuPage } from '../menu/menu';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -17,10 +9,10 @@ import { MenuPage } from '../menu/menu';
 })
 export class LoginPage {
 
-  email: string = "Your email here...";
+  email: string = "";
   password: string = "";
 
-  constructor(public auth: AngularFireAuth) {
+  constructor(public auth: AuthProvider) {
   }
 
   ionViewDidLoad() {
@@ -29,7 +21,7 @@ export class LoginPage {
 
   async doLogin() {
     try{
-      await this.auth.auth.signInWithEmailAndPassword(this.email, this.password);
+      await this.auth.login(this.email, this.password);
     }catch(e){
       console.log(e);
     }

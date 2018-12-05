@@ -25,6 +25,11 @@ import { AngularFireStorageModule } from 'angularfire2/storage'
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import * as env_firebase from '../environment/firebase';
 
+//Providers
+import { GlobalProvider } from '../providers/global/global';
+import { AuthProvider } from '../providers/auth/auth';
+import { DatabaseProvider } from '../providers/database/database';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -63,7 +68,10 @@ import * as env_firebase from '../environment/firebase';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GlobalProvider,
+    AuthProvider,
+    DatabaseProvider
   ]
 })
 export class AppModule {}
