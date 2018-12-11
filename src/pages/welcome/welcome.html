@@ -2,22 +2,30 @@
 
   <ion-navbar text-center color="back">
 
-    <ion-title>Haws Road Community Church</ion-title>
+    <button ion-button menuToggle icon-only class="menubtn">
+      <ion-icon name='menu'></ion-icon>
+    </button>
 
-    <ion-buttons top left>
-
-      <button ion-button menuToggle icon-only>
-        <ion-icon name='menu'></ion-icon>
-      </button>
-
-    </ion-buttons>
+    <ion-title>Welcome</ion-title>
 
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
-
-  Welcome to the Haws Road Community Church!
-
+<ion-content padding id="page2">
+  <h3 id="welcome-heading1" style="color:#000000;font-weight:600;font-style:italic;text-align:center;">
+    Welcome to Haws Road Community Church!
+  </h3>
+  <div class="spacer" style="height:40px;" id="welcome-spacer1"></div>
+  <img src="./assets/imgs/haws_road.jpg" style="display:block;width:85%;height:auto;margin-left:auto;margin-right:auto;" />
+  <div class="spacer" style="height:40px;" id="welcome-spacer2"></div>
+  <div id="welcome-markdown4" style="text-align:center;" class="show-list-numbers-and-dots">
+    <p style="color:#000000;font-size:14px;">
+      We would love for you to join us for service from
+      <strong>
+        11AM-12PM
+      </strong>
+      on Sunday mornings!
+    </p>
+  </div>
 </ion-content>

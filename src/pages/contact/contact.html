@@ -2,15 +2,11 @@
 
   <ion-navbar text-center color="back">
 
-    <ion-title>Haws Road Community Church</ion-title>
+    <button ion-button menuToggle icon-only class="menubtn">
+      <ion-icon name='menu'></ion-icon>
+    </button>
 
-    <ion-buttons top left>
-
-      <button ion-button menuToggle icon-only>
-        <ion-icon name='menu'></ion-icon>
-      </button>
-
-    </ion-buttons>
+    <ion-title>Contact Us</ion-title>
 
   </ion-navbar>
 
@@ -44,10 +40,10 @@
 
       <div class="directory_format">
 
-          Address: {{item["Street Address"]}}, {{item.City}} {{item.State}} {{item.Zip}}
-  
-        </div>
-  
+        Address: {{item["Street Address"]}}, {{item.City}} {{item.State}} {{item.Zip}}
+
+      </div>
+
     </ion-item>
 
   </ion-list>
