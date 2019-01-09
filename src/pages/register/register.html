@@ -10,23 +10,47 @@
 
 <ion-content padding>
 
+  *Starred forms are required
+
   <ion-item>
 
-    <ion-label floating>Email</ion-label>
+    <ion-label floating>Name</ion-label>
+    <ion-input [(ngModel)]="name"></ion-input>
+
+  </ion-item>
+
+  <ion-item>
+
+    <p>Upload a Profile Photo?</p>
+    <input class="file-input" type="file" (change)="profilePicUpload($event.target.files)">
+
+  </ion-item>
+
+
+  <ion-item>
+
+    <ion-label floating>Phone Number</ion-label>
+    <ion-input [(ngModel)]="phone"></ion-input>
+
+  </ion-item>
+
+  <ion-item>
+
+    <ion-label floating>Email*</ion-label>
     <ion-input [(ngModel)]="email"></ion-input>
 
   </ion-item>
 
   <ion-item>
 
-    <ion-label floating>Password</ion-label>
+    <ion-label floating>Password*</ion-label>
     <ion-input type="password" [(ngModel)]="password"></ion-input>
 
   </ion-item>
 
   <ion-item>
 
-    <ion-label floating>Verify Password</ion-label>
+    <ion-label floating>Verify Password*</ion-label>
     <ion-input type="password" [(ngModel)]="verifypw"></ion-input>
 
   </ion-item>

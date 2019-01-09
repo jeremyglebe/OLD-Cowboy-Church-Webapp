@@ -14,33 +14,38 @@
 
 <ion-content padding>
 
+  <h2 style="text-align: center">
+    <br>Church Phone: {{db.appDoc['phone']}}<br>
+    Church Email: {{db.appDoc['email']}}<br><br>
+  </h2>
+
   <ion-list>
 
     <div class="directory_header">
 
-      <ion-list-header style="font-size: 2rem">Member Directory</ion-list-header>
+      <ion-list-header style="font-size: 3rem">Member Directory</ion-list-header>
 
     </div>
 
-    <ion-item *ngFor="let item of dbp.directory">
+    <ion-item *ngFor="let item of db.directory">
 
       <div class="directory_format">
 
-        <img src="{{dbp.image_urls[item.Picture]}}" width="35%">
+        <img src="{{item.photoURL}}">
 
       </div>
 
-      <div class="directory_name">{{item.Name}}</div>
+      <div class="directory_name">{{item.displayName}}</div>
 
       <div class="directory_format">
 
-        Phone #: {{item.Phone}}
+        Phone #: {{item.phone}}
 
       </div>
 
       <div class="directory_format">
 
-        Address: {{item["Street Address"]}}, {{item.City}} {{item.State}} {{item.Zip}}
+        Email: {{item.email}}
 
       </div>
 

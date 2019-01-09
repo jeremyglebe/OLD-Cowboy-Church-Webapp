@@ -1,0 +1,25 @@
+<ion-header>
+
+    <ion-navbar text-center color="back">
+  
+      <ion-title>Users List</ion-title>
+  
+    </ion-navbar>
+  
+  </ion-header>
+  
+
+<ion-content padding>
+
+  <div *ngFor="let user of db.users">
+    <img src="{{user.photoURL}}" style="max-width: 25%"> <br>
+    UID: {{user.uid}} <br>
+    {{user.displayName}} <br>
+    {{user.email}} <br>
+    {{user.phone}} <br>
+    Show in directory? {{user.public}} <br>
+    <button ion-button large block (click)="addClicked(user.uid)">Add to Directory</button>
+    <br><br>
+  </div>
+
+</ion-content>

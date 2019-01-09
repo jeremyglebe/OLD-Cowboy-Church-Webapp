@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar text-center color="back">
+
+    <ion-title>Gallery</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-button large block (click)="uploadClicked()">Upload new file!</button>
+
+  <div class="images">
+    <div *ngFor="let image of db.gallery">
+      <gallery-image [image_info]="image"></gallery-image>
+    </div>
+  </div>
+
+</ion-content>

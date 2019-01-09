@@ -1,21 +1,14 @@
+import { UsersPage } from './../users/users';
+import { AuthProvider } from './../../providers/auth/auth';
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-//Import pages
+import { GalleryPage } from '../gallery/gallery';
+import { RecordingsPage } from './../recordings/recordings';
 import { TabsPage } from '../tabs/tabs';
-import { LoginPage } from '../login/login';
 import { RegisterPage } from '../register/register';
-import { ManagePage } from '../manage/manage';
-
-//Import global variables
-import { GlobalProvider } from '../../providers/global/global';
-
-/**
- * Generated class for the MenuPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -25,30 +18,39 @@ import { GlobalProvider } from '../../providers/global/global';
 export class MenuPage {
 
   rootPage = TabsPage;
-  g: any;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public global: GlobalProvider)
-  {
-    this.g = global;
-  }
+    public auth: AuthProvider
+  ) { }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
   }
 
-  Clicked_Login() {
-    this.navCtrl.push(LoginPage);
-  }
-
-  Clicked_Register() {
+  registerClicked() {
     this.navCtrl.push(RegisterPage);
   }
 
-  Clicked_Manage() {
-    this.navCtrl.push(ManagePage);
+  loginClicked() {
+    this.navCtrl.push(LoginPage);
+  }
+
+  logoutClicked() {
+    this.auth.logout();
+  }
+
+  galleryClicked() {
+    this.navCtrl.push(GalleryPage);
+  }
+
+  recordingsClicked() {
+    this.navCtrl.push(RecordingsPage);
+  }
+
+  usersClicked() {
+    this.navCtrl.push(UsersPage);
   }
 
 }

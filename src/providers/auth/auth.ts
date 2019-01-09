@@ -1,31 +1,71 @@
+
 import { Injectable } from '@angular/core';
+
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFirestore } from 'angularfire2/firestore';
 
-/*
-  Generated class for the AuthProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class AuthProvider {
 
-  constructor(public angFireAuth: AngularFireAuth) {
+  public user = null;
+
+  constructor(
+    public afAuth: AngularFireAuth,
+    public af: AngularFirestore
+  ) {
     console.log('Hello AuthProvider Provider');
+    afAuth.user.subscribe(
+      (userUpdate) => {
+        this.user = userUpdate;
+        console.log(this.user);
+      }
+    )
   }
 
-  async register(email: string, password: string){
-    try{
-      await this.angFireAuth.auth.createUserWithEmailAndPassword(email, password);
-    }catch(e){
+  async register(email: string, password: string, data?: any) {
+    try {
+      await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+      if (data) {
+        await this.updateUserData(data);
+      } else {
+        await this.updateUserData({});
+      }
+    } catch (e) {
       throw e;
     }
   }
 
-  async login(email: string, password: string){
-    try{
-      await this.angFireAuth.auth.signInWithEmailAndPassword(email, password);
-    }catch(e){
+  async login(email: string, password: string) {
+    try {
+      await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  async logout() {
+    try {
+      await this.afAuth.auth.signOut();
+      this.user = null;
+      console.log(this.user);
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  async updateUserData(data: any) {
+    try {
+      var userObj = data;
+      var user = this.afAuth.auth.currentUser;
+      await user.updateProfile({
+        displayName: data.displayName || "",
+        photoURL: data.photoURL || ""
+      });
+      userObj['email'] = user.email;
+      userObj['uid'] = user.uid;
+      await this.af.collection('apps').doc('ccip').collection('users')
+        .doc(userObj['uid']).set(userObj);
+    } catch (e) {
       throw e;
     }
   }

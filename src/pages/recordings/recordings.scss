@@ -1,0 +1,15 @@
+page-recordings {
+
+    @media (min-width: 0px) {
+        .recordings{
+            column-count: 2;
+        }
+    }
+    
+    @media (min-width: 720px) {
+        .recordings{
+            column-count: 4;
+        }
+    }
+
+}

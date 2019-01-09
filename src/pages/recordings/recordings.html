@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar text-center color="back">
+
+    <ion-title>Gallery</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-button large block (click)="uploadClicked()">Upload new file!</button>
+
+  <div class="recordings">
+    <div *ngFor="let rec of db.recordings">
+      <recording [rec_info]="rec"></recording>
+    </div>
+  </div>
+
+</ion-content>

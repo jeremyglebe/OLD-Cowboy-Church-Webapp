@@ -1,7 +1,5 @@
 {
-  "name": "ccip_web_app",
-  "integrations": {
-    "cordova": {}
-  },
+  "name": "ccip_new",
+  "integrations": {},
   "type": "ionic-angular"
 }

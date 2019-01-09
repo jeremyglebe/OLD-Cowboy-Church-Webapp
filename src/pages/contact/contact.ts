@@ -1,6 +1,6 @@
 import { DatabaseProvider } from './../../providers/database/database';
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -9,8 +9,11 @@ import { IonicPage } from 'ionic-angular';
 })
 export class ContactPage {
 
-  constructor(public dbp: DatabaseProvider) {
-
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public db: DatabaseProvider
+    ) {
   }
 
   ionViewDidLoad() {

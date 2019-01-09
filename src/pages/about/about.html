@@ -12,122 +12,39 @@
 
 </ion-header>
 
-<ion-content padding id="page3">
+<ion-content padding>
 
+  <h2 style="text-align: center">
+    <br>
+    We're located at {{db.appDoc['address']}}<br>
+    Sunday service starts at {{db.appDoc['sunday_time']}}<br>
+    <br>
+    Mission Statement
+  </h2>
+  <p style="text-align: center; font-size: 150%;">
+    {{db.appDoc['mission']}}
+  </p>
 
   <!--Beliefs List-->
-  <ion-list id="about-list2">
+  <ion-list>
 
-    <ion-item id="about-list-heading">
-      <h1 id="about-heading2" style="color:#000000;font-weight:600;text-align:center;">
+    <ion-item>
+      <h1 style="color:#000000;font-weight:600;text-align:center;">
         Our Beliefs
       </h1>
     </ion-item>
 
-    <ion-item id="about-list-item-container3">
-      <div id="about-markdown6" style="text-align:center;" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;font-size:12px;">
-          We believe in the plenary, verbal inspiration of the whole Bible and that it is the supreme and final
-          authority in faith and life.
-        </p>
-        <p style="color:#000000;font-size:12px;">
-          (II Timothy 3:16-17; II Peter 1:20-21)
-        </p>
-      </div>
-    </ion-item>
-    <ion-item id="about-list-item-container4">
-      <div id="about-markdown7" style="text-align:center;" class="show-list-numbers-and-dots">
+    <ion-item *ngFor="let belief of db.beliefs">
+      <div style="text-align:center;" class="show-list-numbers-and-dots">
         <p style="margin-top:0px;color:#000000;">
-          We believe in one God, eternally existing in three persons: Father, Son, and Holy Spirit.
+          {{belief['statement']}}
         </p>
         <p style="color:#000000;">
-          (Deut. 6:4; II Cor. 13:14)
+          {{belief['scripture']}}.
         </p>
       </div>
     </ion-item>
-    <ion-item id="about-list-item-container5">
-      <div id="about-markdown8" style="text-align:center;" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          We believe that Jesus Christ was conceived of the Holy Spirit, born of the Virgin Mary, and that He is true
-          God and true man.
-        </p>
-        <p style="color:#000000;">
-          (Matt. 1:20-25; John 1:14; Romans 8:3)
-        </p>
-      </div>
-    </ion-item>
-    <ion-item id="about-list-item-container6">
-      <div id="about-markdown9" style="text-align:center;" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          We believe that man was created in the image of God; that all men have sinned in the transgression of Adam
-          and subsequently in their personal experience; that they are therefore totally depraved and &quot;the wrath
-          of God abideth on them;&quot; and that
-          the only way to escape eternal condemnation is through the one gracious provision of the love of God.
-        </p>
-        <p style="color:#000000;">
-          (Gen. 1:25-27; Rom. 3:22-26)
-        </p>
-        <p style="color:#000000;"></p>
-      </div>
-    </ion-item>
-    <ion-item id="about-list-item-container7">
-      <div id="about-markdown10" style="text-align:center;" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          We believe that salvation is the gift of God offered to man by grace and received by personal faith in the
-          Lord Jesus Christ; that the Son of God gave &quot;His life as a ransom for many&quot; and bore &quot;our sins
-          in His own body on the tree;&quot;
-          and that all who truly believe in Him are eternally saved on the ground of His shed blood.
-        </p>
-        <p style="color:#000000;">
-          (Eph. 2:8-9; I Peter 2:24; John 10:28-29)
-        </p>
-      </div>
-    </ion-item>
-    <ion-item id="about-list-item-container8">
-      <div id="about-markdown11" style="text-align:center;" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          We believe in the personal bodily resurrection of our Lord and Savior, in His ascension into heaven, and in
-          His present mediatorial High Priestly office there at the right hand of the Father.
-        </p>
-        <p style="color:#000000;">
-          (Acts 1:9; Luke 24:6-7; Heb. 9:24; 7:25).
-        </p>
-      </div>
-    </ion-item>
-    <ion-item id="about-list-item-container9">
-      <div id="about-markdown12" style="text-align:center;" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          We believe in &quot;that blessed hope&quot;—the personal, bodily, imminent, and pre-millennial return of the
-          Lord Jesus Christ.
-        </p>
-        <p style="color:#000000;">
-          (Titus 2:13; Acts 1: 9-11).
-        </p>
-      </div>
-    </ion-item>
-    <ion-item id="about-list-item-container10">
-      <div id="about-markdown13" style="text-align:center;" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          We believe that all who receive by faith the Lord Jesus Christ are born again by the Holy Spirit and that the
-          Holy Spirit indwells every believer to enlighten, enable, and guide him in life and service.
-        </p>
-        <p style="color:#000000;">
-          (John 3:6-7; I Cor. 2:12; John 14:16, 26; 16:24; Rom. 8:14).
-        </p>
-      </div>
-    </ion-item>
-    <ion-item id="about-list-item-container11">
-      <div id="about-markdown14" style="text-align:center;" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          We believe in the bodily resurrection of the just and the unjust, the everlasting blessedness of the saved,
-          and the everlasting, conscious punishment of the lost.
-        </p>
-        <p style="color:#000000;">
-          (Mark 9:43-48; Rev. 20:15, 22:3-5, 11).
-        </p>
-      </div>
-    </ion-item>
-  </ion-list>
 
+  </ion-list>
 
 </ion-content>

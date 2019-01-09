@@ -1,29 +1,27 @@
+import { AboutPage } from './../about/about';
+import { ContactPage } from './../contact/contact';
+import { FindPage } from './../find/find';
+import { WelcomePage } from './../welcome/welcome';
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
-import { WelcomePage } from '../welcome/welcome';
-import { AboutPage } from '../about/about';
-import { LocatePage } from '../locate/locate';
-import { ContactPage } from '../contact/contact';
-
-/**
- * Generated class for the TabsPage tabs.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
   selector: 'page-tabs',
-  templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html',
 })
 export class TabsPage {
 
   welcomeTab = WelcomePage;
   aboutTab = AboutPage;
-  findTab = LocatePage;
+  findTab = FindPage;
   contactTab = ContactPage;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad TabsPage');
+  }
 
 }

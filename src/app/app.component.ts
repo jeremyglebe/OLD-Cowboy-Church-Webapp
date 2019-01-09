@@ -3,8 +3,8 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-//Import pages
-import { MenuPage } from '../pages/menu/menu';
+//Pages
+import { MenuPage } from './../pages/menu/menu';
 
 @Component({
   templateUrl: 'app.html'

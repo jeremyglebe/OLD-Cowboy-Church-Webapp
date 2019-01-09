@@ -1,6 +1,7 @@
 import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 
 @IonicPage()
 @Component({
@@ -12,7 +13,10 @@ export class LoginPage {
   email: string = "";
   password: string = "";
 
-  constructor(public auth: AuthProvider) {
+  constructor(
+    public auth: AuthProvider,
+    public navCtrl: NavController
+  ) {
   }
 
   ionViewDidLoad() {
@@ -20,9 +24,10 @@ export class LoginPage {
   }
 
   async doLogin() {
-    try{
+    try {
       await this.auth.login(this.email, this.password);
-    }catch(e){
+      this.navCtrl.pop();
+    } catch (e) {
       console.log(e);
     }
   }

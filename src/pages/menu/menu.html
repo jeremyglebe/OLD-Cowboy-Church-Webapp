@@ -10,9 +10,12 @@
 
     <ion-buttons>
 
-        <button ion-button large block (click)="Clicked_Login()">Sign In</button>
-        <button ion-button large block (click)="Clicked_Register()">Register</button>
-        <button ion-button large block (click)="Clicked_Manage()" *ngIf="g.admin">Manage</button>
+        <button ion-button large block (click)="registerClicked()" *ngIf="auth.user == null">Register</button>
+        <button ion-button large block (click)="loginClicked()" *ngIf="auth.user == null">Sign In</button>
+        <button ion-button large block (click)="logoutClicked()" *ngIf="auth.user != null">Sign Out</button>
+        <button ion-button large block (click)="galleryClicked()">Gallery</button>
+        <button ion-button large block (click)="recordingsClicked()">Recordings</button>
+        <button ion-button large block (click)="usersClicked()">Users</button>
 
     </ion-buttons>
 

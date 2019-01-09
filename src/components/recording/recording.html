@@ -1,0 +1,21 @@
+<div *ngIf="rec_info['type']=='audio'">
+  <audio controls>
+    <source src="{{rec_info['link']}}">
+    Your browser does not support the audio element.
+  </audio>
+  <br>
+  {{rec_info['caption']}}
+  <br>
+  {{rec_info['time'] | fireDate}}
+</div>
+
+<div *ngIf="rec_info['type']=='video'">
+  <video width="100%" height="auto" controls>
+    <source src="{{rec_info['link']}}">
+      Your browser does not support the video tag.
+  </video>
+  <br>
+  {{rec_info['caption']}}
+  <br>
+  {{rec_info['time'] | fireDate}}
+</div>

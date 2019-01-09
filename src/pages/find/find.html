@@ -1,0 +1,45 @@
+<ion-header>
+
+    <ion-navbar text-center color="back">
+  
+      <button ion-button menuToggle icon-only class="menubtn">
+        <ion-icon name='menu'></ion-icon>
+      </button>
+      
+      <ion-title>Find Us</ion-title>
+  
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+  
+    <h4 style="text-align: center;">
+  
+      &nbsp;&nbsp;Trying to find the church? Take a look at this map.
+  
+    </h4>
+
+    <div class="text_format" *ngIf="!mobile">
+
+        &nbsp;&nbsp;Need directions? Choose somewhere to start down below.<br>
+        &nbsp;&nbsp;(If you want directions from your house or anywhere else not listed, just click the
+        "Directions" button inside the map. It'll take you to Google Maps and you can get directions from any point you
+        choose.)<br><br>
+
+    </div>
+  
+    <div class="map_format">
+      <iframe id="myMap" [src]="currMap | safe" width=100% height=100% frameborder="5" style="border:5" allowfullscreen></iframe>
+    </div>
+  
+    <ion-buttons text-center align-items-center>
+  
+      <button ion-button (click)="dirCityHall()">Directions starting from<br>City Hall</button>
+      <button ion-button (click)="dirHighSchool()">Directions starting from<br>IP High School</button>
+      <button ion-button (click)="dirBradford()">Directions starting from<br>Bradford Elementary</button>
+      <button ion-button (click)="dirCancel()">I don't need directions<br>(Original Map)</button>
+  
+    </ion-buttons>
+  
+  </ion-content>
